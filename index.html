@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>TOP Rock Paper Scissors Project</title>
+    </head>
+    <body>
+        <script>
+            //Play five rounds of rock paper scissors in dev console.
+            //Break down play 1 round of RPS and repeat 5 times.
+            //Pseudocode v1 for 1 round of RPS.
+            //Step 1 Computer randomly chooses Rock Paper or Scissors.
+            //Step 2 Ask Player for choice.
+            //Step 3 Compare choices and declare winner.
+            //Step 4 Add 1 point to winner
+            //Pseudocode for Step 1 
+                //Assign values 0 1 and 2 to rock paper and scissors respectively
+                //Let computer choose random number from 0 to 2 and store in variable computerChoice
+                //convert to equivalent string.
+            //Pseudocode for Step 2
+                //ask player for choice and store in variable playerChoice
+            //Pseudocode for Step 3
+                //if choices are the same declare draw
+                //else if choices are not the same check ranking
+                    //if playerChoice is Paper and computerChoice is Scissors declare computer win
+                    //else if playerChoice is Scissors and computerChoice is Rock declare computer win
+                    //else if playerChoice is Rock and computerChoice is Paper declare computer win
+                    //else declare player win
+            //Psuedocode for Step 4 
+                //if player wins playerScore plus 1 
+                //if computer wins computerScore plus 1
+            //Pseudocode for 5 rounds of RPS
+                //Step 1 Add 1 to roundCounter
+                //Step 2 Play 1 round of RPS
+                //Step 3 Check roundCounter
+                    //If roundCounter is less than 5 go back to step 1
+                    //else end game
+                //Step 4 Compare scores
+                    //if playerScore is greater than computerScore declare player win
+                    //else declare computer win.                 
+            //Code Start
+            //Declare variables
+            let playerChoice;
+            let computerChoice;
+            let playerScore;
+            let computerScore;
+            let roundCounter;
+            
+            function chooseRockPaperScissors() {
+                let answer = prompt('Rock, Paper or Scissors?');
+                if (answer.toLowerCase = 'rock') {
+                   playerChoice = answer.toLowerCase;
+                }  else if (answer.toLowerCase = 'paper'){
+                    playerChoice = answer.toLowerCase;
+                }   else if (answer.toLowerCase = 'scissors'){
+                    playerChoice = answer.toLowerCase;
+                }   else playerChoice = null, alert("Try Again");
+            }
 
+            function computerChoosesRPS() {
+                let answer = Math.ceil(Math.random()*3)
+                if (answer === 1){
+                    computerChoice = 'rock';
+                } else if (answer === 2){
+                    computerChoice = 'paper';
+                } else if (answer === 3){
+                    computerChoice = 'scissors';
+                }
+                console.log(computerChoice);
+            }
+            //Start 5 rounds 
+
+
+        </script>
+    </body>
+</html>
