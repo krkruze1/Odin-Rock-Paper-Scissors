@@ -45,15 +45,17 @@
             let playerScore;
             let computerScore;
             let roundCounter;
+            let roundWinner;
+            let gameWinner;
             
             function chooseRockPaperScissors() {
                 let answer = prompt('Rock, Paper or Scissors?');
-                if (answer.toLowerCase = 'rock') {
-                   playerChoice = answer.toLowerCase;
-                }  else if (answer.toLowerCase = 'paper'){
-                    playerChoice = answer.toLowerCase;
-                }   else if (answer.toLowerCase = 'scissors'){
-                    playerChoice = answer.toLowerCase;
+                if (answer.toLowerCase() === 'rock') {
+                   playerChoice = answer.toLowerCase();
+                }  else if (answer.toLowerCase() === 'paper'){
+                    playerChoice = answer.toLowerCase();
+                }   else if (answer.toLowerCase() === 'scissors'){
+                    playerChoice = answer.toLowerCase();
                 }   else playerChoice = null, alert("Try Again");
             }
 
@@ -66,7 +68,36 @@
                 } else if (answer === 3){
                     computerChoice = 'scissors';
                 }
-                console.log(computerChoice);
+                //console.log(computerChoice);
+            }
+
+            function findWinner() {
+                if (playerChoice === computerChoice){
+                    roundWinner = 'no one';
+                } else if (playerChoice === 'rock' && computerChoice === 'paper'){
+                    roundWinner = 'computer';
+                } else if (playerChoice === 'paper' && computerChoice === 'scissors'){
+                    roundWinner = 'computer';
+                } else if (playerChoice === 'scissors' && computerChoice === 'rock'){
+                    roundWinner = 'computer';
+                } else roundWinner = 'player';
+                console.log(roundWinner + ' wins the round');
+            }
+
+            function updateScore(){
+                if (winner === 'computer'){
+                    computerScore +=1;
+                } else if (winner === 'player') {
+                    playerScore +=1;
+                }
+            }
+
+            function playRound(){
+                computerChoosesRPS();
+                chooseRockPaperScissors();
+                findWinner();
+                updateScore();
+                winner;
             }
             //Start 5 rounds 
 
