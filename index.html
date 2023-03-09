@@ -101,6 +101,14 @@
             }
             //Start 5 rounds 
 
+            function fiveRoundsRPS (){
+                
+                for (let i=0; i<5; i++){
+                    playRound();
+                }
+                 let fiveRoundWinner = (playerScore>computerScore) ? 'player' : 'computer';
+                 console.log(fiveRoundWinner + ' wins the game! Congratulations');
+            }
 
         </script>
     </body>
