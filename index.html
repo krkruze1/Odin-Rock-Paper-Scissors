@@ -44,9 +44,7 @@
             let computerChoice;
             let playerScore;
             let computerScore;
-            let roundCounter;
             let roundWinner;
-            let gameWinner;
             
             function chooseRockPaperScissors() {
                 let answer = prompt('Rock, Paper or Scissors?');
@@ -85,9 +83,9 @@
             }
 
             function updateScore(){
-                if (winner === 'computer'){
+                if (roundWinner === 'computer'){
                     computerScore +=1;
-                } else if (winner === 'player') {
+                } else if (roundWinner === 'player') {
                     playerScore +=1;
                 }
             }
@@ -97,16 +95,18 @@
                 chooseRockPaperScissors();
                 findWinner();
                 updateScore();
-                winner;
+                return roundWinner;
             }
             //Start 5 rounds 
 
             function fiveRoundsRPS (){
-                
+                playerScore = 0;
+                computerScore = 0;
                 for (let i=0; i<5; i++){
                     playRound();
                 }
-                 let fiveRoundWinner = (playerScore>computerScore) ? 'player' : 'computer';
+                 let fiveRoundWinner = (playerScore>computerScore) ? 'player' : 
+                 (playerScore<computerScore) ? 'computer' : 'no one';
                  console.log(fiveRoundWinner + ' wins the game! Congratulations');
             }
 
