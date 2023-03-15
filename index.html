@@ -50,11 +50,11 @@
                 let answer = prompt('Rock, Paper or Scissors?');
                 if (answer.toLowerCase() === 'rock') {
                    playerChoice = answer.toLowerCase();
-                }  else if (answer.toLowerCase() === 'paper'){
+                } else if (answer.toLowerCase() === 'paper'){
                     playerChoice = answer.toLowerCase();
-                }   else if (answer.toLowerCase() === 'scissors'){
+                } else if (answer.toLowerCase() === 'scissors'){
                     playerChoice = answer.toLowerCase();
-                }   else playerChoice = null, alert("Try Again");
+                } else playerChoice = 0//, alert("Try Again");
             }
 
             function computerChoosesRPS() {
@@ -78,8 +78,13 @@
                     roundWinner = 'computer';
                 } else if (playerChoice === 'scissors' && computerChoice === 'rock'){
                     roundWinner = 'computer';
+                } else if (playerChoice === 0){
+                    alert("Try Again!");
+                    chooseRockPaperScissors();
+                    findWinner();
                 } else roundWinner = 'player';
-                console.log(roundWinner + ' wins the round');
+                //console.log(roundWinner + ' wins the round');  if choice other than rps is made console prints twice.
+                // removed and placed in play round after this function
             }
 
             function updateScore(){
@@ -95,6 +100,7 @@
                 chooseRockPaperScissors();
                 findWinner();
                 updateScore();
+                console.log(roundWinner + ' wins the round');
                 return roundWinner;
             }
             //Start 5 rounds 
